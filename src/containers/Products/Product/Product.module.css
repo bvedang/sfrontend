@@ -1,0 +1,29 @@
+.Container {
+  margin: 0px;
+  padding: 0px;
+}
+
+.ListGroup {
+  max-height: 230px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ListHeading {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+
+.ProductInfo {
+  margin-top: 20px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-align: justify;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}

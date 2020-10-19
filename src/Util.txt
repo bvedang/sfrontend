@@ -1,0 +1,41 @@
+____________________________________________________________________________________________________
+onSignHandler = (event) => {
+    this.setState({ loading: true });
+    axios({
+      method: "POST",
+      url: "/login",
+      headers: {},
+      data: {
+        email: this.state.email,
+        password: +this.state.password,
+      },
+    })
+      .then((response) => {
+        console.log(response.data.access_token);
+        localStorage.setItem("token", "Bearer " + response.data.access_token);
+        this.setState({ loading: false, authenticated: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({ loading: true });
+      });
+  };
+__________________________________________________________________________________________________________
+
+componentDidMount() {
+    axios({
+      method: "GET",
+      url: "/alluser",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((response) => {
+        this.setState({ users: response.data.Allusers });
+        console.log(this.state.users);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+___________________________________________________________________________________________________________

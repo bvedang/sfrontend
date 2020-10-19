@@ -1,0 +1,10 @@
+.ProductContainer {
+  margin: 30px auto 0px auto;
+}
+
+.ProductsHeading {
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  font-family: "Open Sans" sans-serif;
+}

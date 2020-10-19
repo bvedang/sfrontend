@@ -1,0 +1,33 @@
+.ProductCard {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 30px auto 20px auto;
+  background-color: white;
+  font-size: 18px;
+  text-align: end;
+}
+
+.ModalContent {
+  margin: 5px auto;
+  width: 100%;
+}
+
+.InputField {
+  color: #343a40;
+  background: #23272b;
+}
+
+.ModalHeading {
+  font-size: 18px;
+}
+
+.InputField:focus {
+  color: Black !important;
+  border: solid 2px #1976d2 !important;
+  box-shadow: none !important;
+}
+
+.InputField:hover {
+  border: solid 2px black !important;
+}
