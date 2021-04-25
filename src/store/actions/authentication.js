@@ -18,7 +18,7 @@ export const authenticationInit = (user) => {
   return (dispatch) => {
     axios({
       method: "POST",
-      url: "/api/login",
+      url: "http://127.0.0.1:5000/api/auth",
       headers: {},
       data: {
         email: user.email,

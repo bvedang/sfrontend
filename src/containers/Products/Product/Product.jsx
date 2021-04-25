@@ -68,7 +68,11 @@ class Product extends Component {
 		//console.log(rawmaterial);
 		const newRawmaterial = [...this.state.setRawmaterial];
 		if (newRawmaterial.length > 0) {
-			if (!newRawmaterial.some((a) => a.id === rawmaterial.id)) {
+			if (
+				!newRawmaterial.some(
+					(a) => a["rawmaterial_id"] === rawmaterial["rawmaterial_id"]
+				)
+			) {
 				newRawmaterial.push(rawmaterial);
 			}
 			this.setState({
@@ -87,7 +91,7 @@ class Product extends Component {
 		const newRawmaterials = [...this.state.setRawmaterial];
 		if (newRawmaterials.length > 0) {
 			const updatesRawmterial = newRawmaterials.filter(
-				(rawmaterial) => rawmaterial.id !== id
+				(rawmaterial) => rawmaterial["rawmaterial_id"] !== id
 			);
 			console.log(updatesRawmterial);
 			this.setState({ setRawmaterial: updatesRawmterial, selectedIndex: -1 });
@@ -109,15 +113,25 @@ class Product extends Component {
 	};
 
 	onSetRawmaterialDoneHanlder = () => {
-		console.log(this.state.setRawmaterial);
-		if (this.state.setRawmaterial.length > 0) {
-			this.props.setProductRawmaterial(
-				localStorage.getItem("token"),
-				this.state.productId,
-				this.state.setRawmaterial
-			);
+		if (this.state.productId !== -1) {
+			if (this.state.setRawmaterial.length > 0) {
+				this.props.setProductRawmaterial(
+					localStorage.getItem("token"),
+					this.state.productId,
+					this.state.setRawmaterial
+				);
+			}
+			this.setState({
+				showModal: false,
+				selectedIndex: -1,
+				setRawmaterial: [],
+			});
 		}
-		this.setState({ showModal: false, selectedIndex: -1, setRawmaterial: [] });
+		this.setState({
+			showModal: false,
+			selectedIndex: -1,
+			setRawmaterial: [],
+		});
 	};
 
 	closeDialogue = () => {

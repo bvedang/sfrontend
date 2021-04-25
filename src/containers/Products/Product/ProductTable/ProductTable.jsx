@@ -8,8 +8,9 @@ import {
 	TableRow,
 	Paper,
 	IconButton,
+	Tooltip,
 } from "@material-ui/core";
-import { Edit, Delete, AddCircle } from "@material-ui/icons";
+import { Edit, Delete, AddCircle, ArrowForward } from "@material-ui/icons";
 import ProductAddBatch from "../ProductAddBatch/ProductAddBatch";
 
 const ProductTable = (props) => {
@@ -31,6 +32,11 @@ const ProductTable = (props) => {
 						<TableCell key={batch.rawmaterial}>{batch.quantity}</TableCell>
 					))}
 					<TableCell align="right">
+						<Tooltip title="Add Detail">
+							<IconButton style={{ color: "black", outline: "none" }}>
+								<ArrowForward />
+							</IconButton>
+						</Tooltip>
 						<IconButton style={{ color: "black", outline: "none" }}>
 							<Edit />
 						</IconButton>

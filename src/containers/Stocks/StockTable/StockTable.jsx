@@ -36,7 +36,7 @@ const StockTable = (props) => {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <TableCell>{rowInfo.id}</TableCell>
+            <TableCell>{rowInfo['rawmaterial_id']}</TableCell>
             <TableCell>{rowInfo.name}</TableCell>
             <TableCell align="right">
               <IconButton

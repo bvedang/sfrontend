@@ -155,6 +155,7 @@ export const deleteProductSetRawmaterial = (
 			.then((res) => {
 				console.log(res.data);
 				dispatch(productRmwInit(token, productId));
+				dispatch(getProductBatchRecords(token, productId));
 			})
 			.catch((error) => {
 				console.log(error);
